@@ -1,12 +1,15 @@
+import { Link } from "react-router-dom";
+
 type MatchCardProps = {
   title: string;
   subtitle: string;
   location: string;
   confidence: string;
   status?: "Lost" | "Found";
+  to?: string;
 };
 
-const MatchCard = ({ title, subtitle, location, confidence, status = "Found" }: MatchCardProps) => {
+export default function MatchCard({ title, subtitle, location, confidence, status = "Found", to = "/matches" }: MatchCardProps) {
   const statusClass = status === "Lost" ? "bg-rose-50 text-rose-700 ring-rose-200" : "bg-emerald-50 text-emerald-700 ring-emerald-200";
 
   return (
@@ -24,10 +27,8 @@ const MatchCard = ({ title, subtitle, location, confidence, status = "Found" }: 
       </div>
       <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 text-sm">
         <p className="font-medium text-slate-500">{location}</p>
-        <button className="font-bold text-slate-950 hover:underline">View details</button>
+        <Link to={to} className="font-bold text-slate-950 hover:underline">View details</Link>
       </div>
     </article>
   );
-};
-
-export default MatchCard;
+}
