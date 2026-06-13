@@ -1,2 +1,2 @@
-export * from "./Dashboard";
-export * from "./sections";
+export { default } from "./Dashboard";
+export { default as Dashboard } from "./Dashboard";
