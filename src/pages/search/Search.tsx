@@ -1,18 +1,17 @@
-import Container from "../../shared/components/shared/container";
+import { SearchResults } from "./sections";
 import SearchFilters from "./sections/SearchFilters";
 import SearchHeader from "./sections/SearchHeader";
-import SearchResults from "./sections/SearchResults";
 
-export default function Search() {
+export function Search() {
   return (
-    <section className="bg-slate-50 py-10 sm:py-12">
-      <Container>
-        <div className="space-y-6">
-          <SearchHeader />
-          <SearchFilters />
-          <SearchResults />
-        </div>
-      </Container>
-    </section>
+    <main className="min-h-screen bg-slate-50">
+      <SearchHeader />
+      <SearchFilters />
+      <SearchResults
+        onViewReport={(report) => {
+          console.log("View report:", report.id);
+        }}
+      />
+    </main>
   );
 }

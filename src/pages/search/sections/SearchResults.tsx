@@ -1,27 +1,39 @@
-import MatchCard from "../../../shared/components/MatchCard";
+import { ReportCard } from "../../../shared/components";
+import { mockReports, type Report } from "../../../features/reports";
 
-const results = [
-  { id: 1, title: "Black leather wallet", type: "Found" as const, location: "Shahr-e-Naw Market", confidence: "91%", subtitle: "Found near a cafe with cards inside. Owner verification required." },
-  { id: 2, title: "iPhone 13 Pro", type: "Lost" as const, location: "Macroyan area", confidence: "87%", subtitle: "Lost phone with dark case. Last seen near taxi stand." },
-  { id: 3, title: "Blue school bag", type: "Found" as const, location: "University Gate", confidence: "78%", subtitle: "Blue backpack with books and stationery." },
-];
+type SearchResultsProps = {
+  onViewReport?: (report: Report) => void;
+};
 
-export default function SearchResults() {
+export function SearchResults({ onViewReport }: SearchResultsProps) {
   return (
-    <div>
-      <div className="mb-4 flex items-center justify-between">
+    <section className="py-12">
+      <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-xl font-black text-slate-950">Recommended results</h2>
-          <p className="mt-1 text-sm text-slate-500">Sorted by AI confidence score</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600">
+            Search results
+          </p>
+
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-950">
+            Recently reported items
+          </h2>
+
+          <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+            Browse lost and found reports. AI matching will later rank these
+            results based on category, location, date, description, and images.
+          </p>
         </div>
-        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-600">{results.length} results</span>
+
+        <div className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+          {mockReports.length} reports found
+        </div>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
-        {results.map((item) => (
-          <MatchCard key={item.id} title={item.title} subtitle={item.subtitle} location={item.location} confidence={item.confidence} status={item.type} />
+      <div className="grid gap-6 lg:grid-cols-2">
+        {mockReports.map((report) => (
+          <ReportCard key={report.id} report={report} onView={onViewReport} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
