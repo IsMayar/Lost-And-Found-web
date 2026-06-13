@@ -1,45 +1,32 @@
 import Container from "../../../shared/components/shared/container";
 
+const features = [
+  { title: "Vision AI", desc: "Photo-based item matching for phones, bags, documents, wallets, and more." },
+  { title: "Semantic search", desc: "Understands meaning, not only exact keywords, for better discovery." },
+  { title: "Location intelligence", desc: "Prioritizes nearby reports and relevant time windows." },
+  { title: "Private messaging", desc: "Keeps users anonymous until a recovery is verified." },
+  { title: "Admin dashboard", desc: "Track reports, active searches, match quality, and recovery activity." },
+  { title: "Multilingual ready", desc: "Designed for English, Dari, and Pashto experiences." },
+];
+
 const FeaturesSection = () => {
-  const features = [
-    {
-      title: "Vision AI",
-      desc: "Match images of lost and found items automatically.",
-    },
-    {
-      title: "Voice Input",
-      desc: "Describe lost items using voice messages.",
-    },
-    {
-      title: "Smart Matching",
-      desc: "Semantic AI matching beyond keywords.",
-    },
-    {
-      title: "Location Awareness",
-      desc: "Prioritize nearby lost/found reports.",
-    },
-    {
-      title: "Multilingual",
-      desc: "Supports Dari, Pashto, and English.",
-    },
-    {
-      title: "Privacy First",
-      desc: "Users remain anonymous until match confirmation.",
-    },
-  ];
-
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="bg-slate-950 py-24 text-white">
       <Container>
-        <h2 className="text-3xl font-bold text-center mb-16">
-          AI-Powered Features
-        </h2>
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-300">Features</p>
+            <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight">Built like a real AI product, not a basic form website.</h2>
+          </div>
+          <p className="max-w-md leading-7 text-slate-300">Professional flows, clean cards, confidence scoring, and clear trust signals make the app feel reliable.</p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((f, i) => (
-            <div key={i} className="p-6 bg-white border rounded-xl">
-              <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
-              <p className="text-gray-500">{f.desc}</p>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => (
+            <div key={feature.title} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-sm">
+              <div className="mb-5 h-11 w-11 rounded-2xl bg-cyan-300/15 ring-1 ring-cyan-300/20" />
+              <h3 className="text-lg font-black">{feature.title}</h3>
+              <p className="mt-3 leading-7 text-slate-300">{feature.desc}</p>
             </div>
           ))}
         </div>

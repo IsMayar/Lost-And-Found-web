@@ -1,29 +1,23 @@
 import Container from "../../../shared/components/shared/container";
 
+const stats = [
+  { value: "10K+", label: "Items reported" },
+  { value: "8.4K", label: "Potential matches" },
+  { value: "5K+", label: "Active users" },
+  { value: "15+", label: "Cities covered" },
+];
+
 const StatisticsSection = () => {
   return (
-    <section className="py-24">
+    <section className="bg-white py-20">
       <Container>
-        <div className="grid md:grid-cols-4 gap-10 text-center">
-          <div>
-            <h3 className="text-4xl font-bold">10K+</h3>
-            <p className="text-gray-500">Items Reported</p>
-          </div>
-
-          <div>
-            <h3 className="text-4xl font-bold">8K+</h3>
-            <p className="text-gray-500">Matches Found</p>
-          </div>
-
-          <div>
-            <h3 className="text-4xl font-bold">5K+</h3>
-            <p className="text-gray-500">Active Users</p>
-          </div>
-
-          <div>
-            <h3 className="text-4xl font-bold">15+</h3>
-            <p className="text-gray-500">Cities Covered</p>
-          </div>
+        <div className="grid overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 md:grid-cols-4">
+          {stats.map((stat) => (
+            <div key={stat.label} className="border-b border-slate-200 p-8 text-center last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0">
+              <p className="text-4xl font-black text-slate-950">{stat.value}</p>
+              <p className="mt-2 text-sm font-bold uppercase tracking-wide text-slate-500">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </Container>
     </section>

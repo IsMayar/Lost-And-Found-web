@@ -1,12 +1,57 @@
-# React + Vite
+# AI Lost & Found App Roadmap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Current status
 
-Currently, two official plugins are available:
+The project currently has a frontend UI prototype.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Goal
 
-## Expanding the ESLint configuration
+Build a professional AI-powered lost and found platform where users can report lost/found items, search items, receive AI match suggestions, and safely claim items.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Phase 1: Frontend Prototype with Mock Data
+
+### Required pages
+
+- Home
+- Login
+- Register
+- Dashboard
+- Report Lost Item
+- Report Found Item
+- Search Items
+- Item Details
+- AI Matches
+- Claim Item
+- My Reports
+- Notifications
+- Profile
+
+### Required user flows
+
+1. User can report a lost item.
+2. User can report a found item.
+3. User can search lost/found items.
+4. User can open item details.
+5. User can see AI match suggestions.
+6. User can submit a claim request.
+7. User can view their own reports.
+8. User can see notifications.
+
+## Phase 2: Backend
+
+- Auth
+- Users
+- Reports
+- Uploads
+- Matches
+- Claims
+- Notifications
+- Admin
+
+## Phase 3: AI
+
+- Text similarity matching
+- Image similarity matching
+- AI search
+- Duplicate detection
+- Fraud detection
