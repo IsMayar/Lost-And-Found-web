@@ -1,6 +1,6 @@
 import Container from "../../shared/components/shared/container";
-import SearchFilters from "./sections/searchFilters";
-import SearchHeader from "./sections/searchHeader";
+import SearchFilters from "./sections/SearchFilters";
+import SearchHeader from "./sections/SearchHeader";
 import SearchResults from "./sections/SearchResults";
 
 export default function Search() {
